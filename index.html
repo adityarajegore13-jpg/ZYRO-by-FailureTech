@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZYRO by FailureTech — Zero Friction. Pure Sound.</title>
+  
+  <!-- SEO Best Practices -->
+  <meta name="description" content="ZYRO by FailureTech is a next-gen audio-visual streaming platform for Gen Z. Experience zero latency, bit-perfect lossless audio, and reactive 3D Zero-G visualizers.">
+  <meta name="keywords" content="ZYRO, FailureTech, music streaming, Gen Z, 3D visualizer, lossless audio, spatial sound, cyber phonk, electronic music">
+  <meta name="author" content="FailureTech">
+  <meta property="og:title" content="ZYRO by FailureTech — Zero Friction. Pure Sound.">
+  <meta property="og:description" content="The audio-visual streaming experience by FailureTech. Zero friction, spatial 360 sound, and 3D visualizer.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Syne, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Three.js Library for 3D Zero-G WebGL Visualizer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Ambient Light Blooms Glowing Behind Background -->
+  <div class="ambient-bloom bloom-hero-mint" aria-hidden="true"></div>
+  <div class="ambient-bloom bloom-hero-cyan" aria-hidden="true"></div>
+  <div class="ambient-bloom bloom-features-mint" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="nav-container">
+      <!-- Brand Logomark & Tag -->
+      <a href="#" class="brand-group" id="brand-home-link" aria-label="ZYRO Homepage">
+        <div class="brand-logo-mark">
+          <!-- Stylized Orbital Z Glyph -->
+          <svg viewBox="0 0 24 24">
+            <path d="M4 6h16l-10 12h10" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="2.5" fill="#00FFA3" stroke="none"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          ZYRO
+          <span class="brand-micro-tag">by FailureTech</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Stream</a></li>
+          <li><a href="#orbit-arch" class="nav-link">Orbit</a></li>
+          <li><a href="#crates" class="nav-link">Crates</a></li>
+          <li><a href="#sound-lab" class="nav-link">Audio Lab</a></li>
+          <li><a href="#live-rooms" class="nav-link">Live Rooms</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions: Glass Search + CTA -->
+      <div class="nav-actions">
+        <button class="nav-search-btn" id="nav-search-trigger" aria-label="Search crates and tracks">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search sonic drops</span>
+          <kbd>⌘K</kbd>
+        </button>
+
+        <button class="btn-nav-primary" id="btn-nav-launch">
+          <span>Launch Web Player</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-btn" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <!-- Status Badge -->
+          <div class="hero-meta-strip">
+            <div class="badge-tech">
+              <span class="status-dot"></span>
+              LIVE ORBIT 01 // 9216 KBPS BIT-PERFECT FLAC
+            </div>
+          </div>
+
+          <!-- Bold Futuristic Headline -->
+          <h1 class="hero-title">
+            Zero Friction.<br>
+            <span class="text-gradient">Pure Sound.</span>
+          </h1>
+
+          <!-- Minimal Sub-headline -->
+          <p class="hero-subhead">
+            The audio-visual streaming experience by FailureTech. Engineered for Gen Z creators, sonic explorers, and zero-latency spatial fidelity.
+          </p>
+
+          <!-- Two Primary CTA Buttons -->
+          <div class="hero-cta-cluster">
+            <!-- CTA 1: Solid Crisp White with Black Text ('Launch Orbit') -->
+            <button class="btn-solid-white" id="cta-launch-orbit">
+              <span>Launch Orbit</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <!-- CTA 2: Dark Translucent Glass Button with White Glow Border ('Explore Crates') -->
+            <a href="#crates" class="btn-glass-glow" id="cta-explore-crates">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Explore Crates</span>
+            </a>
+          </div>
+
+          <!-- Micro Tech Specifications Row -->
+          <div class="hero-specs-row">
+            <div class="spec-item">
+              <span class="spec-val">&lt; 0.18ms</span>
+              <span class="spec-lbl">Neural Latency</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-val">360° Binaural</span>
+              <span class="spec-lbl">Spatial Field</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-val">24-Bit / 192k</span>
+              <span class="spec-lbl">Direct Studio Master</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual Centerpiece -->
+        <div class="hero-visual-centerpiece" id="hero-visual-centerpiece">
+          
+          <!-- Visualizer Preset Mode Switcher HUD -->
+          <div class="visualizer-controls-hud">
+            <button class="vis-mode-btn active" data-mode="ring">Zero-G Ring</button>
+            <button class="vis-mode-btn" data-mode="wave">Wave Lattice</button>
+            <button class="vis-mode-btn" data-mode="nebula">Nebula</button>
+          </div>
+
+          <!-- Interactive 3D Visualizer Canvas Container (Zero-G Ring) -->
+          <div class="visualizer-canvas-wrapper" id="visualizer-canvas-container" title="Drag to rotate 3D visualizer"></div>
+
+          <!-- Floating Translucent Glass Music Player Card -->
+          <div class="floating-player-card" id="floating-music-player">
+            <!-- Top Row: Cover, Track Info, Live Equalizer -->
+            <div class="player-top-row">
+              <div class="player-track-info">
+                <div class="player-artwork-box">
+                  <img src="assets/zerog.jpg" alt="Current Track Album Art" id="player-cover-img">
+                </div>
+                <div class="track-meta">
+                  <span class="track-title" id="player-track-title">ZEROG // 01</span>
+                  <span class="track-artist" id="player-track-artist">KAIRO x FAILURETECH</span>
+                </div>
+              </div>
+
+              <!-- Live Equalizer Bars -->
+              <div class="live-equalizer-bars" aria-hidden="true">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+              </div>
+            </div>
+
+            <!-- Waveform Progress Bar in Glowing White/Cyan -->
+            <div class="waveform-progress-area">
+              <div class="waveform-canvas-container" id="waveform-container" title="Click anywhere to scrub playback">
+                <canvas id="waveform-canvas"></canvas>
+              </div>
+              <div class="timecode-row">
+                <span id="current-time-display">00:00</span>
+                <span class="player-badge-audio-flac">9216 KBPS BIT-PERFECT</span>
+                <span id="total-time-display">03:04</span>
+              </div>
+            </div>
+
+            <!-- Player Controls Row -->
+            <div class="player-controls-row">
+              <button class="control-btn" id="spatial-toggle" class="active" title="Toggle 360° Spatial Audio">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </button>
+
+              <button class="control-btn" id="btn-prev" title="Previous Track">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                  <line x1="5" y1="19" x2="5" y2="5"></line>
+                </svg>
+              </button>
+
+              <!-- Central Play/Pause Toggle -->
+              <button class="btn-play-pause-main" id="hero-play-toggle" title="Play / Pause Audio">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+
+              <button class="control-btn" id="btn-next" title="Next Track">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                  <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+              </button>
+
+              <!-- Volume & Mute Controls -->
+              <div class="player-vol-group">
+                <button class="control-btn" id="btn-mute" title="Toggle Mute">
+                  <svg id="icon-vol-high" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  </svg>
+                  <svg id="icon-vol-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                </button>
+                <input type="range" min="0" max="1" step="0.02" value="0.85" class="player-vol-slider" id="player-volume-slider" aria-label="Volume">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: THE ORBIT ARCHITECTURE (FEATURES)
+         ========================================================================== -->
+    <section class="section-orbit-features" id="orbit-arch">
+      <div class="section-container">
+        
+        <div class="section-header-block">
+          <span class="section-tag">ENGINEERED BY FAILURETECH</span>
+          <h2 class="section-heading">The Orbit Architecture</h2>
+          <p class="section-desc">
+            A radical departure from legacy compression. Zero friction stream pipelines mapped to high-definition spatial spheres.
+          </p>
+        </div>
+
+        <div class="features-grid-quad">
+          <!-- Card 01 -->
+          <div class="glass-panel feature-card">
+            <span class="feature-index">01 // NEURAL FIELD</span>
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Zero-G Spatial 360°</h3>
+            <p class="feature-text">
+              Real-time HRTF binaural processing rendering sounds in true spherical space around your skull with pin-point depth.
+            </p>
+          </div>
+
+          <!-- Card 02 -->
+          <div class="glass-panel feature-card">
+            <span class="feature-index">02 // SUB-LATENCY</span>
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">Neural Mesh Sync</h3>
+            <p class="feature-text">
+              Host synchronized zero-latency silent listening parties with Gen Z friends across Tokyo, Berlin, and NY under 0.18ms.
+            </p>
+          </div>
+
+          <!-- Card 03 -->
+          <div class="glass-panel feature-card">
+            <span class="feature-index">03 // AI CURATION</span>
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">Algorithmic Crates</h3>
+            <p class="feature-text">
+              Predictive vibe classification syncing with circadian energy drops, cyber phonk surges, and deep focus flows.
+            </p>
+          </div>
+
+          <!-- Card 04 -->
+          <div class="glass-panel feature-card">
+            <span class="feature-index">04 // BIT-PERFECT</span>
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Pure Master FLAC</h3>
+            <p class="feature-text">
+              Direct uncompressed 9216 kbps 24-bit studio pipeline. Experience every transient snap and sub-bass rumble untouched.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: EXPLORE CRATES
+         ========================================================================== -->
+    <section class="section-crates" id="crates">
+      <div class="section-container">
+        
+        <div class="section-header-block">
+          <span class="section-tag">CURATED SONIC VAULTS</span>
+          <h2 class="section-heading">Explore Sonic Crates</h2>
+          <p class="section-desc">
+            Community-driven, AI-curated sound capsules built for late night focus, Tokyo drift runs, and deep ambient chill.
+          </p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="crates-filter-bar">
+          <button class="crate-filter-pill active" data-filter="all">All Crates</button>
+          <button class="crate-filter-pill" data-filter="zerog">Zero-G Ambient</button>
+          <button class="crate-filter-pill" data-filter="cyber">Cyber Phonk</button>
+          <button class="crate-filter-pill" data-filter="glitch">Liquid Chrome</button>
+        </div>
+
+        <!-- Crates Grid -->
+        <div class="crates-grid">
+          
+          <!-- Crate 1 -->
+          <div class="glass-panel crate-card" data-genre="zerog">
+            <div class="crate-cover-box">
+              <img src="assets/zerog.jpg" alt="Zero-G Album Art">
+              <button class="crate-play-trigger" data-track-index="0" title="Play Zero-G">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+              <div class="crate-cover-overlay"></div>
+            </div>
+            <div class="crate-body">
+              <div class="crate-tags-row">
+                <span class="crate-genre-tag">Zero-G Ambient</span>
+                <span class="crate-listeners">● 14.2k in Orbit</span>
+              </div>
+              <h4 class="crate-title">ZEROG // 01</h4>
+              <p class="crate-curator">Curated by KAIRO x FailureTech Labs</p>
+              <div class="crate-action-footer">
+                <button class="btn-add-crate" data-track-id="zerog" id="btn-crate-zerog">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span class="crate-btn-label">Add to Crate</span>
+                </button>
+                <span class="crate-bpm-badge">112 BPM • F# MIN</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crate 2 -->
+          <div class="glass-panel crate-card" data-genre="cyber">
+            <div class="crate-cover-box">
+              <img src="assets/cyberdrift.jpg" alt="Cyber Phonk Album Art">
+              <button class="crate-play-trigger" data-track-index="1" title="Play Neural Drift">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+              <div class="crate-cover-overlay"></div>
+            </div>
+            <div class="crate-body">
+              <div class="crate-tags-row">
+                <span class="crate-genre-tag">Cyber Phonk Synth</span>
+                <span class="crate-listeners">● 29.8k in Orbit</span>
+              </div>
+              <h4 class="crate-title">NEURAL DRIFT // 02</h4>
+              <p class="crate-curator">Curated by Neon Protocol</p>
+              <div class="crate-action-footer">
+                <button class="btn-add-crate" data-track-id="neuraldrift" id="btn-crate-neuraldrift">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span class="crate-btn-label">Add to Crate</span>
+                </button>
+                <span class="crate-bpm-badge">128 BPM • D MIN</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crate 3 -->
+          <div class="glass-panel crate-card" data-genre="glitch">
+            <div class="crate-cover-box">
+              <img src="assets/chromapulse.jpg" alt="Chroma Pulse Album Art">
+              <button class="crate-play-trigger" data-track-index="2" title="Play Chroma Pulse">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+              <div class="crate-cover-overlay"></div>
+            </div>
+            <div class="crate-body">
+              <div class="crate-tags-row">
+                <span class="crate-genre-tag">Liquid Chrome Glitch</span>
+                <span class="crate-listeners">● 18.5k in Orbit</span>
+              </div>
+              <h4 class="crate-title">CHROMA PULSE // 03</h4>
+              <p class="crate-curator">Curated by Orbital Sync</p>
+              <div class="crate-action-footer">
+                <button class="btn-add-crate" data-track-id="chromapulse" id="btn-crate-chromapulse">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span class="crate-btn-label">Add to Crate</span>
+                </button>
+                <span class="crate-bpm-badge">140 BPM • A MIN</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: INTERACTIVE SOUND LAB
+         ========================================================================== -->
+    <section class="section-sound-lab" id="sound-lab">
+      <div class="section-container">
+        
+        <div class="glass-panel sound-lab-wrapper">
+          <div class="lab-info">
+            <span class="section-tag">REAL-TIME DSP ENGINE</span>
+            <h3 class="lab-title">Zero-G Sound Sculptor</h3>
+            <p class="lab-desc">
+              Tweak live frequency harmonics, filter cutoff envelopes, and sub-bass resonance in real-time. Experience audio directly mapped to your senses.
+            </p>
+            <div class="badge-tech">
+              <span class="status-dot"></span>
+              WEB AUDIO API • ACTIVE ANALYSER NODE
+            </div>
+          </div>
+
+          <div class="lab-sliders-grid">
+            
+            <!-- Slider 1: Bass Boost -->
+            <div class="lab-control-card">
+              <div class="control-label-row">
+                <span>Sub-Bass Harmonic Boost</span>
+                <span class="control-val-display" id="val-bass">100%</span>
+              </div>
+              <input type="range" min="0.5" max="2.5" step="0.1" value="1.0" class="sleek-slider" id="slider-bass" aria-label="Sub-bass Boost">
+            </div>
+
+            <!-- Slider 2: Filter Cutoff -->
+            <div class="lab-control-card">
+              <div class="control-label-row">
+                <span>Lowpass Resonance Cutoff</span>
+                <span class="control-val-display" id="val-cutoff">3.5 kHz</span>
+              </div>
+              <input type="range" min="800" max="8000" step="100" value="3500" class="sleek-slider" id="slider-cutoff" aria-label="Lowpass Filter Cutoff">
+            </div>
+
+            <!-- Slider 3: Spatial Width -->
+            <div class="lab-control-card">
+              <div class="control-label-row">
+                <span>Spatial 360 Stereo Field</span>
+                <span class="control-val-display" id="val-spatial">80%</span>
+              </div>
+              <input type="range" min="0.2" max="1.0" step="0.05" value="0.8" class="sleek-slider" id="slider-spatial" aria-label="Spatial Width">
+            </div>
+
+            <!-- Slider 4: Arp Cadence -->
+            <div class="lab-control-card">
+              <div class="control-label-row">
+                <span>High Treble Clarity</span>
+                <span class="control-val-display" id="val-glitch">100%</span>
+              </div>
+              <input type="range" min="0.5" max="2.0" step="0.1" value="1.0" class="sleek-slider" id="slider-glitch" aria-label="Treble Clarity">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: LIVE ORBIT ROOMS (GEN Z SOCIAL)
+         ========================================================================== -->
+    <section class="section-live-rooms" id="live-rooms">
+      <div class="section-container">
+        
+        <div class="section-header-block">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="section-tag">COMMUNAL SYNAPSE</span>
+            <span class="badge-demo-tag" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--electric-cyan); background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.25); padding: 2px 8px; border-radius: var(--radius-pill);">[Interactive Demonstration]</span>
+          </div>
+          <h2 class="section-heading">Live Orbit Rooms</h2>
+          <p class="section-desc">
+            Interactive demonstration of synchronized spatial audio spaces. (Room participant counts and telemetry are visual simulations for demonstration purposes).
+          </p>
+        </div>
+
+        <div class="rooms-grid">
+          
+          <!-- Room 1 -->
+          <div class="glass-panel room-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="room-status-badge">
+                <span class="status-dot"></span>
+                2,410 LISTENERS IN DEMO
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.1); padding: 1px 6px; border-radius: 3px;">SIMULATED</span>
+            </div>
+            <div class="room-header">
+              <h4 class="room-title">Shibuya Cyber Drift</h4>
+              <p class="room-track-playing">Playing: Midnight Protocol (130 BPM)</p>
+            </div>
+            <div class="room-avatars-row">
+              <div class="user-avatar-bubble">ZK</div>
+              <div class="user-avatar-bubble">RA</div>
+              <div class="user-avatar-bubble">NY</div>
+              <div class="user-avatar-bubble">0X</div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-left: 14px;">+2.4k more</span>
+            </div>
+            <button class="room-footer-btn" data-room="Shibuya Cyber Drift">Enter Demo Room</button>
+          </div>
+
+          <!-- Room 2 -->
+          <div class="glass-panel room-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="room-status-badge">
+                <span class="status-dot"></span>
+                840 LISTENERS IN DEMO
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.1); padding: 1px 6px; border-radius: 3px;">SIMULATED</span>
+            </div>
+            <div class="room-header">
+              <h4 class="room-title">FailureTech Alpha Lab</h4>
+              <p class="room-track-playing">Testing: 3D Zero-G Binaural Engine v3.0</p>
+            </div>
+            <div class="room-avatars-row">
+              <div class="user-avatar-bubble">FT</div>
+              <div class="user-avatar-bubble">AI</div>
+              <div class="user-avatar-bubble">99</div>
+              <div class="user-avatar-bubble">KR</div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-left: 14px;">+836 more</span>
+            </div>
+            <button class="room-footer-btn" data-room="FailureTech Alpha Lab">Enter Demo Room</button>
+          </div>
+
+          <!-- Room 3 -->
+          <div class="glass-panel room-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="room-status-badge">
+                <span class="status-dot"></span>
+                5,120 LISTENERS IN DEMO
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.1); padding: 1px 6px; border-radius: 3px;">SIMULATED</span>
+            </div>
+            <div class="room-header">
+              <h4 class="room-title">Zero-G Sleep & Deep Code</h4>
+              <p class="room-track-playing">Playing: Obsidian Orbit Chillscape</p>
+            </div>
+            <div class="room-avatars-row">
+              <div class="user-avatar-bubble">CD</div>
+              <div class="user-avatar-bubble">40</div>
+              <div class="user-avatar-bubble">MX</div>
+              <div class="user-avatar-bubble">LP</div>
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-left: 14px;">+5.1k more</span>
+            </div>
+            <button class="room-footer-btn" data-room="Zero-G Sleep & Deep Code">Enter Demo Room</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION: CONVERSION CTA BANNER
+         ========================================================================== -->
+    <section class="section-cta-banner">
+      <div class="section-container">
+        
+        <div class="glass-panel cta-box">
+          <h2>Ready to Enter Orbit?</h2>
+          <p>
+            Experience music with zero friction and uncompressed spatial mastery. Claim your exclusive FailureTech Alpha Pass.
+          </p>
+
+          <form class="cta-form-row" id="alpha-invite-form">
+            <input type="email" placeholder="Enter your email or @handle..." required class="cta-input" aria-label="Your email">
+            <button type="submit" class="cta-submit-btn">Get Orbit Pass</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       PERSISTENT BOTTOM MINI-PLAYER DOCK
+       ========================================================================== -->
+  <aside class="docked-mini-player" id="docked-mini-player" aria-label="Sticky Mini Player">
+    <div class="docked-track-meta">
+      <img src="assets/zerog.jpg" alt="Mini cover" class="docked-thumb" id="mini-cover-img">
+      <div class="docked-titles">
+        <span class="docked-name" id="mini-track-name">ZEROG // 01</span>
+        <span class="docked-sub" id="mini-track-sub">Zero-G Ambient</span>
+      </div>
+    </div>
+
+    <div class="docked-controls">
+      <button class="control-btn" id="mini-play-toggle" title="Play / Pause">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
+
+      <button class="control-btn" id="mini-btn-next" title="Next Track">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 4 15 12 5 20 5 4"></polygon>
+          <line x1="19" y1="5" x2="19" y2="19"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SPOTLIGHT SEARCH MODAL (CMD+K)
+       ========================================================================== -->
+  <div class="spotlight-modal-backdrop" id="spotlight-modal" role="dialog" aria-modal="true" aria-label="Spotlight Search">
+    <div class="spotlight-window">
+      <div class="spotlight-search-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neon-mint)" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" placeholder="Search by title, artist, genre, mood, BPM..." class="spotlight-input" id="spotlight-input" autofocus>
+        <button id="spotlight-clear-btn" class="spotlight-clear-btn" title="Clear input" style="display: none; background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 8px; font-size: 0.95rem;">✕</button>
+        <kbd style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">ESC</kbd>
+        <button id="spotlight-close" style="color: var(--text-secondary); margin-left: 8px;" aria-label="Close search">✕</button>
+      </div>
+
+      <div class="spotlight-results-list" id="spotlight-results">
+        <!-- Dynamic search results populated by app.js -->
+        <div id="spotlight-empty-state" class="spotlight-empty-state" style="display: none; padding: 36px 16px; text-align: center; color: var(--text-secondary); font-size: 0.95rem;">
+          No sonic drops found matching "<span id="empty-query-text" style="color: var(--neon-mint); font-weight: 600;"></span>"
+          <small style="color: var(--text-muted); display: block; margin-top: 8px; font-family: var(--font-mono); font-size: 0.78rem;">
+            Try searching "Ambient", "Phonk", "Glitch", "KAIRO", or "128 BPM"
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" id="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <div class="brand-text">
+          ZYRO <span class="brand-micro-tag">by FailureTech</span>
+        </div>
+        <button id="mobile-drawer-close" aria-label="Close navigation" style="color: #FFFFFF; font-size: 1.4rem;">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link">Stream</a></li>
+        <li><a href="#orbit-arch" class="mobile-nav-link">Orbit</a></li>
+        <li><a href="#crates" class="mobile-nav-link">Crates</a></li>
+        <li><a href="#sound-lab" class="mobile-nav-link">Audio Lab</a></li>
+        <li><a href="#live-rooms" class="mobile-nav-link">Live Rooms</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="zyro-toast-container" id="zyro-toast-container" aria-live="polite"></div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top-row">
+        <!-- Brand Info -->
+        <div class="footer-brand-info">
+          <div class="brand-group">
+            <div class="brand-logo-mark">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 6h16l-10 12h10" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="2.5" fill="#00FFA3" stroke="none"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              ZYRO
+              <span class="brand-micro-tag">by FailureTech</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Next-generation audio streaming architecture built for pure sound fidelity and Zero-G immersion.
+          </p>
+        </div>
+
+        <!-- Links Columns -->
+        <div class="footer-links-group">
+          <div class="footer-column">
+            <span class="footer-col-title">Platform</span>
+            <ul class="footer-link-list">
+              <li><a href="#hero">Launch Orbit</a></li>
+              <li><a href="#crates">Curated Crates</a></li>
+              <li><a href="#sound-lab">Audio Lab DSP</a></li>
+              <li><a href="#live-rooms">Live Rooms</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <span class="footer-col-title">Technology</span>
+            <ul class="footer-link-list">
+              <li><a href="#">Neural Sync Engine</a></li>
+              <li><a href="#">Spatial 360° HRTF</a></li>
+              <li><a href="#">Bit-Perfect FLAC</a></li>
+              <li><a href="#">Developer API</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <span class="footer-col-title">FailureTech</span>
+            <ul class="footer-link-list">
+              <li><a href="#">Manifesto</a></li>
+              <li><a href="#">Hardware Labs</a></li>
+              <li><a href="#">Join the Crew</a></li>
+              <li><a href="#">Press Kit</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          <span>© 2026 ZYRO by FailureTech Inc. All Rights Reserved.</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="status-dot"></span>
+          <span>SYSTEMS OPERATIONAL // ALL ORBITS STABLE</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/audio-engine.js"></script>
+  <script src="scripts/visualizer-3d.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
